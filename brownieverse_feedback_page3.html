@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brownieverse Feedback</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3e5ab;
+      color: #4e342e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      padding: 20px;
+    }
+    .logo {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .logo img {
+      width: 120px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 28px;
+      margin-top: 15px;
+      color: #4e342e;
+    }
+    .tagline {
+      font-size: 16px;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+    .form-wrapper {
+      width: 100%;
+      max-width: 600px;
+      background: #fff8e1;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], textarea, select {
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    input[type="checkbox"], input[type="radio"] {
+      margin-right: 10px;
+    }
+    .ratings {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .submit-btn {
+      background-color: #795548;
+      color: white;
+      border: none;
+      padding: 12px;
+      margin-top: 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #5d4037;
+    }
+    #thank-you {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="photo_2025-07-20_18-25-33.jpg" alt="Brownieverse Logo" />
+    <h1>Brownieverse</h1>
+    <div class="tagline">Where every bite is a universe 🍫✨</div>
+  </div>
+
+  <div class="form-wrapper">
+    <form id="feedback-form">
+      <label>Which Brownie(s) did you try?</label>
+      <div>
+        <input type="checkbox" id="classic" name="brownie" value="Classic Fudge Brownie"> <label for="classic">Classic Fudge Brownie</label><br>
+        <input type="checkbox" id="walnut" name="brownie" value="Walnut Crunch"> <label for="walnut">Walnut Crunch</label><br>
+        <input type="checkbox" id="biscoff" name="brownie" value="Biscoff Brownie"> <label for="biscoff">Biscoff Brownie</label><br>
+        <input type="checkbox" id="oreo" name="brownie" value="Oreo Lava"> <label for="oreo">Oreo Lava</label><br>
+        <input type="checkbox" id="dark" name="brownie" value="Dark Chocolate Sea Salt"> <label for="dark">Dark Chocolate Sea Salt</label><br>
+        <input type="checkbox" id="white" name="brownie" value="White Choco Chip"> <label for="white">White Choco Chip</label><br>
+        <input type="checkbox" id="none" name="brownie" value="Haven't tried yet"> <label for="none">Haven't tried yet</label>
+      </div>
+
+      <label>How was your overall experience?</label>
+      <div>
+        <input type="radio" name="experience" value="Loved it!"> Loved it!<br>
+        <input type="radio" name="experience" value="It was nice :)"> It was nice :)<br>
+        <input type="radio" name="experience" value="Average"> Average<br>
+        <input type="radio" name="experience" value="Needs improvement"> Needs improvement
+      </div>
+
+      <label>Rate the following (1⭐–5⭐):</label>
+      <div class="ratings">
+        <label>Brownie Taste:
+          <select name="taste">
+            <option>1⭐</option><option>2⭐</option><option>3⭐</option><option>4⭐</option><option>5⭐</option>
+          </select>
+        </label>
+        <label>Ambience:
+          <select name="ambience">
+            <option>1⭐</option><option>2⭐</option><option>3⭐</option><option>4⭐</option><option>5⭐</option>
+          </select>
+        </label>
+        <label>Staff Nature:
+          <select name="staff">
+            <option>1⭐</option><option>2⭐</option><option>3⭐</option><option>4⭐</option><option>5⭐</option>
+          </select>
+        </label>
+      </div>
+
+      <label>Your name (optional)</label>
+      <input type="text" name="name">
+
+      <label>Any feedback for us?</label>
+      <textarea name="message" rows="5"></textarea>
+
+      <button type="submit" class="submit-btn">Submit Feedback 🍫</button>
+    </form>
+
+    <div id="thank-you">
+      <h2>🎉 Thank You!</h2>
+      <p style="font-size:18px;">We truly appreciate your feedback. Every bite matters! 🍫</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("feedback-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      this.style.display = "none";
+      document.getElementById("thank-you").style.display = "block";
+    });
+  </script>
+</body>
+</html>
